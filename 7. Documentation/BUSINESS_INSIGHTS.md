@@ -8,7 +8,7 @@ The Retail Merchandising Dashboard identifies revenue drivers, vendor performanc
 
 
 
-\---
+---
 ## Revenue Insights
 
 
@@ -21,7 +21,7 @@ The Retail Merchandising Dashboard identifies revenue drivers, vendor performanc
 
 
 
-\---
+---
 ## Vendor Insights
 
 Vendor scorecards reveal:
@@ -34,7 +34,7 @@ Vendor scorecards reveal:
 
 
 
-\---
+---
 ## Inventory Insights
 
 Inventory analysis indicates:
@@ -47,7 +47,7 @@ Inventory analysis indicates:
 
 
 
-\---
+---
 ## Margin Insights
 
 Revenue does not always align with profitability.
@@ -58,7 +58,7 @@ High-revenue vendors or products may not deliver strong margins.
 
 
 
-\---
+---
 ## Strategic Recommendations
 
 1. Reduce vendor concentration
@@ -71,7 +71,7 @@ High-revenue vendors or products may not deliver strong margins.
 
 
 
-\---
+---
 ## Conclusion
 
 The dashboard demonstrates strong merchandising visibility while identifying operational and strategic improvement opportunities.
