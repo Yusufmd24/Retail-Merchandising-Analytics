@@ -1,11 +1,8 @@
 # Data Dictionary
 
-## Data Model
 
 
-
-This project uses a retail merchandising star schema.
-
+## Data Model: This project uses a retail merchandising star schema.
 
 
 ## Fact Table: Sales
