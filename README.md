@@ -40,7 +40,7 @@ Retail-Merchandising-Analytics/
 ├── Power BI/                    # Merchandising_Intelligence_Report.pbix
 │
 └── README.md```
-
+````
 ---
 
 ## 🏗️ Architecture: Star Schema
