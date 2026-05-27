@@ -31,41 +31,15 @@ Retail merchandising teams operate on thin margins and make high-stakes decision
 ## 🗂️ Project Structure
 
 ```
-retail-merchandising-analytics/
+Retail-Merchandising-Analytics/
 │
-├── data/
-│   └── raw/                        # Source CSVs (synthetic, 50K+ rows)
+├── Raw_Data/                    # Source CSVs — synthetic, 50K+ rows
+├── Cleaned_Data/                # Python-cleaned and transformed data
+├── Excel_Report/                # Pivot analysis, category summary reports
+├── SQL/                         # DDL schema files + 6 analytical queries
+├── Power BI/                    # Merchandising_Intelligence_Report.pbix
 │
-├── notebooks/
-│   └── 01_EDA_and_Cleaning.ipynb   # Python EDA: distributions, nulls, outliers
-│
-├── sql/
-│   ├── schema/
-│   │   ├── ddl_fact_sales.sql      # Fact table: sales transactions
-│   │   ├── ddl_dim_product.sql     # Dimension: product & SKU attributes
-│   │   ├── ddl_dim_store.sql       # Dimension: store & channel
-│   │   ├── ddl_dim_vendor.sql      # Dimension: vendor master
-│   │   ├── ddl_dim_date.sql        # Dimension: calendar table
-│   │   └── ddl_dim_promotion.sql   # Dimension: promotion attributes
-│   │
-│   └── queries/
-│       ├── 01_weekly_sales_margin_summary.sql
-│       ├── 02_vendor_scorecard.sql
-│       ├── 03_promotional_lift.sql
-│       ├── 04_top_bottom_skus.sql
-│       ├── 05_omnichannel_split.sql
-│       └── 06_cost_change_simulation.sql
-│
-├── powerbi/
-│   └── Merchandising_Intelligence_Report.pbix
-│
-├── docs/
-│   ├── star_schema_diagram.png
-│   ├── dax_measures.md             # Full DAX library with business context
-│   └── data_dictionary.md
-│
-└── README.md
-```
+└── README.md```
 
 ---
 
