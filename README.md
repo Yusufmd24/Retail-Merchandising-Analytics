@@ -157,9 +157,9 @@ JOIN dim_date    d ON f.date_key    = d.date_key
 JOIN dim_product p ON f.product_key = p.product_key
 GROUP BY d.year_num, d.week_num, p.category
 ORDER BY d.year_num, d.week_num, total_revenue DESC;
-```
+````
 <!-- SCREENSHOT: Add SQL query result image below -->
-<!-- ![Weekly Sales Query Result](1.Weekly_Sales_and_Margin_by_Category.png) -->
+ ![Weekly Sales Query Result](1.Weekly_Sales_and_Margin_by_Category.png) -->
 ---
 
 ### Query 2 — Vendor Scorecard
