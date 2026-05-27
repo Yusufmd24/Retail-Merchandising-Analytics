@@ -6,7 +6,7 @@
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
 ![Power BI](https://img.shields.io/badge/Power%20BI-F2C811?style=flat&logo=powerbi&logoColor=black)
 ![Status](https://img.shields.io/badge/Status-Complete-brightgreen?style=flat)
-![Rows](https://img.shields.io/badge/Dataset-50%2C000%2B%20rows-blue?style=flat)
+![Rows](https://img.shields.io/badge/Dataset-50%2C0000%2B%20rows-blue?style=flat)
 
 ---
 
