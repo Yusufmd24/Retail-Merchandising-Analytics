@@ -159,7 +159,7 @@ GROUP BY d.year_num, d.week_num, p.category
 ORDER BY d.year_num, d.week_num, total_revenue DESC;
 ````
 <!-- SCREENSHOT: Add SQL query result image below -->
- ![Weekly Sales Query Result](4. SQL/SQL_Query_Screenshots/Merchandising_Queries/1.Weekly_Sales_and_Margin_by_Category.png) -->
+![Weekly Sales Query Result](4. SQL/SQL_Query_Screenshots/Merchandising_Queries/1.Weekly_Sales_and_Margin_by_Category.png) -->
 ---
 
 ### Query 2 — Vendor Scorecard
