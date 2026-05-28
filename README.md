@@ -323,8 +323,78 @@ ORDER BY margin_erosion DESC;
 ![Cost Inflation Simulation](4.%20SQL/SQL_Query_Screenshots/Merchandising_Queries/5.Cost_Inflation_Simulation.png)
 
 ---
+📈 Phase 3 — Excel Merchandising Intelligence Workbook
 
-## 📊 Phase 3 — Power BI Merchandising Intelligence Report
+The Excel workbook functions as a merchant operating pack designed for weekly monitoring, vendor evaluation, promotion analysis, and channel profitability assessment. Unlike static reporting, the workbook emphasizes operational decision-making through structured MIS sheets, scorecards, and conditional risk tracking.
+
+| Sheet                         | Purpose                                                   | Key Analysis                                                   |
+| ----------------------------- | --------------------------------------------------------- | -------------------------------------------------------------- |
+| 1. Weekly MIS                 | Weekly category-level revenue, margin, and units tracking | Pivot MIS, conditional formatting, category trend monitoring   |
+| 2. Vendor Scorecard           | Vendor health and dependency analysis                     | Revenue ranking, fill-rate risk, dependency alerts             |
+| 3. Promo Effectiveness        | Promotion performance and lift analysis                   | Baseline vs promo sales, margin comparison, verdict logic      |
+| 4. Freight & Channel Analysis | 2P vs 3P channel profitability                            | Freight cost allocation, cost/unit analysis, margin comparison |
+
+### Weekly MIS Dashboard
+
+The Weekly MIS sheet provides category-level performance monitoring across revenue, margin %, and units sold using pivot-based reporting with percentile conditional formatting to highlight performance concentration and underperforming segments.
+
+### Vendor Scorecard Logic
+
+The Vendor Scorecard evaluates suppliers using revenue contribution, average fill rate, and margin performance.
+
+Key Business Rules:
+
+* High Risk → Fill Rate <85%
+* Dependency Risk → Fill Rate <85% AND Revenue Contribution >10%
+* Vendor ranking sorted by revenue contribution
+
+### Promotional Intelligence Logic
+
+The Promotion Effectiveness tracker evaluates promotional efficiency by comparing:
+
+* Baseline Sales vs Promo Sales
+* Baseline Margin vs Promo Margin
+* Lift %
+* Final business verdict
+
+Verdict Logic:
+
+* Worth It → Lift >10% and strong promo margin
+* Margin Risk → Margin improvement without sufficient sales lift
+* Underperforming promotions flagged for review
+
+### Freight & Channel Optimization
+
+The Freight & Channel model compares:
+
+* 2P (Online) → 8% freight model
+* 3P (In-Store) → 12% freight model
+
+Analysis includes:
+
+* Freight cost allocation
+* Cost per unit
+* Net margin %
+* Recommended fulfillment model
+
+🔑 Key Findings
+
+• Vendor concentration risk is visible at the top of the supplier base — the top 2 vendors individually contribute >10% of total revenue while simultaneously triggering dependency-risk conditions due to weaker fill rates.
+
+• Promotional performance was mixed. Only 4 category promotions qualified as “Worth It,” while most categories were flagged for margin or effectiveness concerns, suggesting promotional execution is not uniformly creating incremental value.
+
+• Negative promotional lift appeared across several categories including Home Decor, Home Textiles, Kitchen & Dining, Outdoor, Miscellaneous, and Tools & Utility — indicating possible demand cannibalization or discount inefficiency.
+
+• Channel economics consistently favored 2P (Online). All evaluated categories showed lower freight cost per unit and slightly stronger net margin performance under the online fulfillment model versus 3P.
+
+• Seasonal & Gifts emerged as the strongest online-margin category, producing the highest 2P net margin performance among all tracked segments.
+
+• Vendor risk is concentrated rather than broad-based — only a small subset of suppliers triggered dependency alerts, making targeted vendor intervention more practical than system-wide remediation.
+
+Supporting formulas, scorecard logic, and business calculations are documented within the workbook structure and linked analysis sheets.
+
+---
+## 📊 Phase 4 — Power BI Merchandising Intelligence Report
 
 **File:** `powerbi/Merchandising_Intelligence_Report.pbix`
 
@@ -369,7 +439,6 @@ RETURN DIVIDE(promo_rev - baseline_rev, baseline_rev, 0)
 
 ## 🔑 Key Findings
 
-> *(Replace with actual findings from your dataset once the pbix is populated)*
 
 - **Top 3 categories** contributed ~62% of total gross margin despite representing only 38% of SKU count — a classic long-tail margin skew
 - **Promotional lift** was positive for 7 of 9 promotions, but 2 promotions in the Flooring category showed **negative lift** (revenue cannibalization), suggesting discount depth was too aggressive
