@@ -224,9 +224,15 @@ GROUP BY category, promo_name
 ORDER BY lift_pct DESC;
 ```
 </details>
+
+![Promotional Lift Analysis](4.%20SQL/SQL_Query_Screenshots/Merchandising_Queries/3.Promotional_Lift_Analysis.png)
+
 ---
 
 ### Query 4 — Top & Bottom SKUs by Margin
+
+<details>
+<summary>View SQL Query</summary>
 
 ```sql
 WITH sku_margin AS (
@@ -251,10 +257,13 @@ FROM (
     SELECT *, RANK() OVER (ORDER BY total_margin ASC) AS rnk FROM sku_margin
 ) b WHERE rnk <= 10;
 ```
-
+</details>
 ---
 
 ### Query 5 — Omni-Channel Revenue Split
+
+<details>
+<summary>View SQL Query</summary>
 
 ```sql
 SELECT
@@ -272,10 +281,13 @@ JOIN dim_store s ON f.store_key = s.store_key
 GROUP BY d.year_num, d.month_num, s.channel_type
 ORDER BY d.year_num, d.month_num, channel_revenue DESC;
 ```
-
+</details>
 ---
 
 ### Query 6 — Cost Change Simulation (What-If)
+
+<details>
+<summary>View SQL Query</summary>
 
 ```sql
 -- Simulates margin impact of a vendor cost increase of N%
@@ -302,7 +314,7 @@ JOIN dim_product p ON f.product_key = p.product_key
 GROUP BY v.vendor_name, p.category
 ORDER BY margin_erosion DESC;
 ```
-
+</details>
 ---
 
 ## 📊 Phase 3 — Power BI Merchandising Intelligence Report
