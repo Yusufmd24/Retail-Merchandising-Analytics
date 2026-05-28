@@ -258,6 +258,8 @@ FROM (
 ) b WHERE rnk <= 10;
 ```
 </details>
+
+![Top 10 Products](4.%20SQL/SQL_Query_Screenshots/Merchandising_Queries/6.Top_10_Products.png)
 ---
 
 ### Query 5 — Omni-Channel Revenue Split
@@ -282,6 +284,8 @@ GROUP BY d.year_num, d.month_num, s.channel_type
 ORDER BY d.year_num, d.month_num, channel_revenue DESC;
 ```
 </details>
+
+![Omni Channel Revenue Split](4.%20SQL/SQL_Query_Screenshots/Merchandising_Queries/4.Omni_Channel_Split.png)
 ---
 
 ### Query 6 — Cost Change Simulation (What-If)
@@ -315,6 +319,9 @@ GROUP BY v.vendor_name, p.category
 ORDER BY margin_erosion DESC;
 ```
 </details>
+
+![Cost Inflation Simulation](4.%20SQL/SQL_Query_Screenshots/Merchandising_Queries/5.Cost_Inflation_Simulation.png)
+
 ---
 
 ## 📊 Phase 3 — Power BI Merchandising Intelligence Report
