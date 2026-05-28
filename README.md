@@ -137,6 +137,7 @@ CREATE TABLE fact_sales (
 ### Query 1 — Weekly Sales & Margin Summary
 <details>
 <summary>View SQL Query</summary>
+  
 ```sql
 SELECT
     d.year_num,
@@ -170,6 +171,7 @@ ORDER BY d.year_num, d.week_num, total_revenue DESC;
 ### Query 2 — Vendor Scorecard
 <details>
 <summary>View SQL Query</summary>
+  
 ```sql
 SELECT
     v.vendor_name,
@@ -185,10 +187,11 @@ ORDER BY total_margin DESC;
 ```
 </details>
 ---
-
+![Vendor Scorecard](4.%20SQL/SQL_Query_Screenshots/Merchandising_Queries/2.Vendor_Scorecard.png)
 ### Query 3 — Promotional Lift Analysis
 <details>
 <summary>View SQL Query</summary>
+  
 ```sql
 WITH promo_sales AS (
     SELECT
