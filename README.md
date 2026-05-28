@@ -163,12 +163,13 @@ ORDER BY d.year_num, d.week_num, total_revenue DESC;
 ````
 </details>
 
-![Weekly Sales Query Result](4.%20SQL/SQL_Query_Screenshots/Merchandising_Queries/1.Weekly_Sales_and_Margin_by_Category.png)]
-````
+![Weekly Sales Query Result](4.%20SQL/SQL_Query_Screenshots/Merchandising_Queries/1.Weekly_Sales_and_Margin_by_Category.png)
+
 ---
 
 ### Query 2 — Vendor Scorecard
-
+<details>
+<summary>View SQL Query</summary>
 ```sql
 SELECT
     v.vendor_name,
@@ -182,11 +183,12 @@ JOIN dim_vendor v ON f.vendor_key = v.vendor_key
 GROUP BY v.vendor_name
 ORDER BY total_margin DESC;
 ```
-
+</details>
 ---
 
 ### Query 3 — Promotional Lift Analysis
-
+<details>
+<summary>View SQL Query</summary>
 ```sql
 WITH promo_sales AS (
     SELECT
@@ -214,7 +216,7 @@ FROM promo_sales
 GROUP BY category, promo_name
 ORDER BY lift_pct DESC;
 ```
-
+</details>
 ---
 
 ### Query 4 — Top & Bottom SKUs by Margin
