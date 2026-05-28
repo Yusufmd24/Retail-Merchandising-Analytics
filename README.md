@@ -108,6 +108,8 @@ df = df[df['revenue'].between(Q1 - 1.5*(Q3-Q1), Q3 + 1.5*(Q3-Q1))]
 ## 🗄️ Phase 2 — SQL Server Schema & Queries
 
 ### DDL Sample — `fact_sales`
+<details>
+<summary>View SQL Query</summary>
 
 ```sql
 CREATE TABLE fact_sales (
@@ -129,7 +131,7 @@ CREATE TABLE fact_sales (
     CONSTRAINT fk_promo   FOREIGN KEY (promo_key)   REFERENCES dim_promotion(promo_key)
 );
 ```
-
+</details>
 ---
 
 ### Query 1 — Weekly Sales & Margin Summary
