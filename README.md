@@ -113,7 +113,7 @@ The data model follows a classic **Kimball star schema** — one central fact ta
 
 ## 🐍 Phase 1 — Python: EDA & Data Cleaning
 
-**Notebook:** `notebooks/01_EDA_and_Cleaning.ipynb`
+**Notebook:** `3. Python/Notebook.ipynb`
 
 Before anything reaches SQL Server, all 500,000+ raw transaction rows were profiled and cleaned in Python using Pandas. This phase is where data quality issues are caught — not silently propagated downstream.
 
@@ -408,7 +408,7 @@ Outputs: freight cost allocation, cost per unit, net margin %, and recommended f
 
 ## 📊 Phase 4 — Power BI: Merchandising Intelligence Report
 
-**File:** `Power BI/Merchandising_Intelligence_Report.pbix`
+**File:** `Power BI/Retail_Merchandising_Dashboard.pbix`
 
 The Power BI report translates the SQL and Excel findings into an interactive, decision-oriented dashboard. Each of the five tabs is purpose-built for a specific stakeholder or workflow.
 
