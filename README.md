@@ -65,11 +65,11 @@ The final deliverable is a **5-tab Power BI Merchandising Intelligence Report**,
 > ![Executive Overview](8.Images/Power_BI_Dashboard/Category_Overview.png)
 
 <!-- SCREENSHOT PLACEHOLDER -->
-> 📸 **Tab 3 — Vendor Scorecard**
+> 📸 **Tab 2 — Vendor Scorecard**
 > ![Vendor Scorecard](8.Images/Power_BI_Dashboard/Vendor_Performance.png)
 
 <!-- SCREENSHOT PLACEHOLDER -->
-> 📸 **Tab 4 — Promotional Intelligence**
+> 📸 **Tab 3 — Promotional Intelligence**
 > ![Promotional Intelligence](8.Images/Power_BI_Dashboard/Promo_Intelligence.png)
 
 ---
@@ -140,11 +140,11 @@ df     = df[df['revenue'].between(Q1 - 1.5 * IQR, Q3 + 1.5 * IQR)]
 
 <!-- SCREENSHOT PLACEHOLDER -->
 > 📸 **EDA — Category Mapping**
-> ![EDA Revenue Distribution](8.%20Images/EDA & Preprocessing/Category_ Mapping.png)
+> ![EDA Category Mapping](8.Images/EDA_&_Preprocessing/Category_Mapping.png)
 
 <!-- SCREENSHOT PLACEHOLDER -->
-> 📸 **EDA — Margin % by Category**
-> ![EDA Margin by Category](docs/screenshots/python_eda_margin_by_category.png)
+> 📸 **EDA — SQL Layer Validation**
+> ![EDA SQL Layer Validation](8.Images/EDA_&_Preprocessing/Final_Validation_for_SQL_Layer.png)
 
 ---
 
