@@ -33,7 +33,7 @@ Retail merchandising teams operate on thin margins and make high-stakes decision
 ```
 Retail-Merchandising-Analytics/
 │
-├── 1.Raw_Data/                                  # Source CSVs — synthetic, 50K+ rows
+├── 1.Raw_Data/                                  # Source CSVs — synthetic, 500K+ rows
 ├── 2.Cleaned_Data/                              # Python-cleaned and transformed data
 ├── 3.Python/
 |      └── Notebook/                             # EDA and cleaning notebook
