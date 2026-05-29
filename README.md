@@ -6,7 +6,7 @@
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
 ![Power BI](https://img.shields.io/badge/Power%20BI-F2C811?style=flat&logo=powerbi&logoColor=black)
 ![Status](https://img.shields.io/badge/Status-Complete-brightgreen?style=flat)
-![Rows](https://img.shields.io/badge/Dataset-50%2C000%2B%20rows-blue?style=flat)
+![Rows](https://img.shields.io/badge/Dataset-500%2C000%2B%20rows-blue?style=flat)
 
 ---
 
@@ -139,8 +139,8 @@ df     = df[df['revenue'].between(Q1 - 1.5 * IQR, Q3 + 1.5 * IQR)]
 - **7 stores** showed zero omni-channel orders in Q1 — flagged as a data completeness issue, not a business signal, and excluded from channel-share calculations for that period
 
 <!-- SCREENSHOT PLACEHOLDER -->
-> 📸 **EDA — Revenue Distribution (Pre vs Post Cleaning)**
-> ![EDA Revenue Distribution](docs/screenshots/python_eda_revenue_distribution.png)
+> 📸 **EDA — Category Mapping**
+> ![EDA Revenue Distribution](8.%20Images/EDA & Preprocessing/Category_ Mapping.png)
 
 <!-- SCREENSHOT PLACEHOLDER -->
 > 📸 **EDA — Margin % by Category**
