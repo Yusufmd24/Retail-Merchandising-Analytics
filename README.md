@@ -536,8 +536,8 @@ Open `Power BI/Merchandising_Intelligence_Report.pbix` and update the SQL Server
 
 **Md Yusuf** — Data Analyst with a background in operational leadership across manufacturing and events. I build analytics pipelines that connect raw data to business decisions.
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=flat&logo=linkedin)](https://linkedin.com/in/YOUR_LINKEDIN)
-[![Portfolio](https://img.shields.io/badge/Portfolio-Visit-black?style=flat&logo=github)](https://YOUR_USERNAME.github.io)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=flat&logo=linkedin)](https://linkedin.com/in/mdyusuf-analytics/)
+[![Portfolio](https://img.shields.io/badge/Portfolio-Visit-black?style=flat&logo=github)](https://Yusufmd24.github.io)
 
 ---
 
