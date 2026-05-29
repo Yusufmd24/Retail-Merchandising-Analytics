@@ -139,8 +139,8 @@ df     = df[df['revenue'].between(Q1 - 1.5 * IQR, Q3 + 1.5 * IQR)]
 - **7 stores** showed zero omni-channel orders in Q1 — flagged as a data completeness issue, not a business signal, and excluded from channel-share calculations for that period
 
 <!-- SCREENSHOT PLACEHOLDER -->
-> 📸 **EDA — Category Mapping**
-> ![EDA Category Mapping](8.Images/EDA_N_Preprocessing/Feature_Engineering.png)
+> 📸 **EDA — Feature Engineering**
+> ![EDA Feature Engineering](8.Images/EDA_N_Preprocessing/Feature_Engineering.png)
 
 <!-- SCREENSHOT PLACEHOLDER -->
 > 📸 **EDA — SQL Layer Validation**
