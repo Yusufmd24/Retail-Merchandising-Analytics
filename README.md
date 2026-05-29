@@ -62,15 +62,15 @@ The final deliverable is a **5-tab Power BI Merchandising Intelligence Report**,
 
 <!-- SCREENSHOT PLACEHOLDER -->
 > 📸 **Tab 1 — Executive Overview**
-> ![Executive Overview](docs/screenshots/powerbi_tab1_executive_overview.png)
+> ![Executive Overview](8.Images/Power_BI_Dashboard/Category_Overview.png)
 
 <!-- SCREENSHOT PLACEHOLDER -->
 > 📸 **Tab 3 — Vendor Scorecard**
-> ![Vendor Scorecard](docs/screenshots/powerbi_tab3_vendor_scorecard.png)
+> ![Vendor Scorecard](8.Images/Power_BI_Dashboard/Vendor_Performance.png)
 
 <!-- SCREENSHOT PLACEHOLDER -->
 > 📸 **Tab 4 — Promotional Intelligence**
-> ![Promotional Intelligence](docs/screenshots/powerbi_tab4_promo_intelligence.png)
+> ![Promotional Intelligence](8.Images/Power_BI_Dashboard/Promo_Intelligence.png)
 
 ---
 
