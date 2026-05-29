@@ -45,8 +45,8 @@ Retail-Merchandising-Analytics/
 ├── 6. Power BI/                                    
 |      └──Retail_Merchandising_Dashboard         # Merchandising_Intelligence_Report.pbix
 ├── documentation/
-│      └── BUSINESS_INSIGHTS.md                  # Full DAX library with business context
-|      └── DATA_DICTIONARY.md 
+│      └── BUSINESS_INSIGHTS.md                  # Business Decisions Taken from the Report
+|      └── DATA_DICTIONARY.md                    # Data dictionary of all the columns used
 │
 └── README.md
 ```
