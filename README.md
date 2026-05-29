@@ -110,7 +110,7 @@ The data model follows a classic **Kimball star schema** — one central fact ta
 
 **Notebook:** `notebooks/01_EDA_and_Cleaning.ipynb`
 
-Before anything reaches SQL Server, all 50,000+ raw transaction rows were profiled and cleaned in Python using Pandas. This phase is where data quality issues are caught — not silently propagated downstream.
+Before anything reaches SQL Server, all 500,000+ raw transaction rows were profiled and cleaned in Python using Pandas. This phase is where data quality issues are caught — not silently propagated downstream.
 
 ### What was cleaned
 
@@ -387,7 +387,6 @@ Tracks each promotion against a pre-promotion baseline across revenue and margin
 
 - ✅ **Worth It** → Lift > 10% with strong promo margin
 - ⚠️ **Margin Risk** → Margin improves but sales lift is insufficient
-- ❌ **Underperforming** → Flagged for review or discontinuation
 
 > 📸 **Excel — Promo Intelligence**
 > ![Promo Intelligence Excel](8.Images/Excel_Report/4.Promo_Tracker.png)
