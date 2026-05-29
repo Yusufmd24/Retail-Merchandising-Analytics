@@ -414,39 +414,32 @@ KPI cards, revenue trend line, and margin waterfall. Designed for leadership —
 
 <!-- SCREENSHOT PLACEHOLDER -->
 > 📸 **Tab 1 — Executive Overview**
-> ![Executive Overview](docs/screenshots/powerbi_tab1_executive_overview.png)
+> ![Executive Overview](8.Images/Power_BI_Dashboard/Category_Overview.png)
 
-### Tab 2 — Category Performance
 
-Weekly sales and margin matrix with WoW % change, conditional formatting on margin thresholds, and a bar/line combo chart for trend context.
-
-<!-- SCREENSHOT PLACEHOLDER -->
-> 📸 **Tab 2 — Category Performance**
-> ![Category Performance](docs/screenshots/powerbi_tab2_category_performance.png)
-
-### Tab 3 — Vendor Scorecard
+### Tab 2 — Vendor Scorecard
 
 Ranked bar chart by total margin, scatter plot of revenue vs. margin % to surface outlier vendors, and a heat map for quick cross-vendor comparison.
 
 <!-- SCREENSHOT PLACEHOLDER -->
-> 📸 **Tab 3 — Vendor Scorecard**
-> ![Vendor Scorecard PBI](docs/screenshots/powerbi_tab3_vendor_scorecard.png)
+> 📸 **Tab 2 — Vendor Scorecard**
+> ![Vendor Scorecard PBI](8.Images/Power_BI_Dashboard/Vendor_Performance.png)
 
-### Tab 4 — Promotional Intelligence
+### Tab 3 — Promotional Intelligence
 
 Clustered bar chart comparing promo vs. baseline unit revenue per category, accompanied by a lift % summary table with conditional formatting to flag cannibalization.
 
 <!-- SCREENSHOT PLACEHOLDER -->
-> 📸 **Tab 4 — Promotional Intelligence**
-> ![Promotional Intelligence](docs/screenshots/powerbi_tab4_promo_intelligence.png)
+> 📸 **Tab 3 — Promotional Intelligence**
+> ![Promotional Intelligence](8.Images/Power_BI_Dashboard/Promo_Intelligence.png)
 
-### Tab 5 — SKU & Channel Drill-Through
+### Tab 4 — SKU & Channel Drill-Through
 
 Treemap of top/bottom SKUs by margin contribution, donut chart for omni-channel revenue share, and a drill-through detail page to inspect individual SKU performance.
 
 <!-- SCREENSHOT PLACEHOLDER -->
-> 📸 **Tab 5 — SKU & Channel Drill-Through**
-> ![SKU Channel](docs/screenshots/powerbi_tab5_sku_channel.png)
+> 📸 **Tab 4 — SKU & Channel Drill-Through**
+> ![SKU Channel](8.Images/Power_BI_Dashboard/Omni_Channel.png)
 
 ---
 
