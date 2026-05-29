@@ -140,11 +140,11 @@ df     = df[df['revenue'].between(Q1 - 1.5 * IQR, Q3 + 1.5 * IQR)]
 
 <!-- SCREENSHOT PLACEHOLDER -->
 > 📸 **EDA — Category Mapping**
-> ![EDA Category Mapping](8.Images/EDA_&_Preprocessing/Category_Mapping.png)
+> ![EDA Category Mapping](8.Images/EDA_N_Preprocessing/Category_Mapping.png)
 
 <!-- SCREENSHOT PLACEHOLDER -->
 > 📸 **EDA — SQL Layer Validation**
-> ![EDA SQL Layer Validation](8.Images/EDA_&_Preprocessing/Final_Validation_for_SQL_Layer.png)
+> ![EDA SQL Layer Validation](8.Images/EDA_N_Preprocessing/Final_Validation_for_SQL_Layer.png)
 
 ---
 
