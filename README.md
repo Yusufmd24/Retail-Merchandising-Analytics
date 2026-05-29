@@ -367,7 +367,7 @@ Provides a category-level performance view across revenue, margin %, and units s
 
 <!-- SCREENSHOT PLACEHOLDER -->
 > 📸 **Excel — Weekly MIS Sheet**
-> ![Weekly MIS](docs/screenshots/excel_weekly_mis.png)
+> ![Weekly MIS](8.Images/Excel_Report/2.Weekly_MIS_Report.png)
 
 ### Sheet 2 — Vendor Scorecard
 
@@ -379,7 +379,7 @@ Evaluates each supplier across revenue contribution, fill rate, and margin perfo
 
 <!-- SCREENSHOT PLACEHOLDER -->
 > 📸 **Excel — Vendor Scorecard**
-> ![Vendor Scorecard Excel](docs/screenshots/excel_vendor_scorecard.png)
+> ![Vendor Scorecard Excel](8.Images/Excel_Report/Vendor_Scorecard.png)
 
 ### Sheet 3 — Promotional Effectiveness
 
