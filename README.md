@@ -33,15 +33,20 @@ Retail merchandising teams operate on thin margins and make high-stakes decision
 ```
 Retail-Merchandising-Analytics/
 │
-├── Raw_Data/                    # Source CSVs — synthetic, 50K+ rows
-├── Cleaned_Data/                # Python-cleaned and transformed data
-├── notebooks/                   # EDA and cleaning notebook
-├── Excel_Report/                # Pivot analysis, MIS, and scorecard workbook
-├── SQL/                         # DDL schema files + 6 analytical queries
-│   └── SQL_Query_Screenshots/   # Query result screenshots
-├── Power BI/                    # Merchandising_Intelligence_Report.pbix
-├── docs/
-│   └── dax_measures.md          # Full DAX library with business context
+├── 1.Raw_Data/                                  # Source CSVs — synthetic, 50K+ rows
+├── 2.Cleaned_Data/                              # Python-cleaned and transformed data
+├── 3.Python/
+|      └── Notebook/                             # EDA and cleaning notebook
+├── 4. SQL/                                      
+|      └── Queries & Scripts/                    # DDL schema files + 6 analytical queries
+│      └── SQL_Query_Screenshots/                # Query result screenshots
+├── 5. Excel_Report/                                
+|      └──Merchant_Report                        # Pivot analysis, MIS, and scorecard workbook
+├── 6. Power BI/                                    
+|      └──Retail_Merchandising_Dashboard         # Merchandising_Intelligence_Report.pbix
+├── documentation/
+│      └── BUSINESS_INSIGHTS.md                  # Full DAX library with business context
+|      └── DATA_DICTIONARY.md 
 │
 └── README.md
 ```
