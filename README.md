@@ -379,7 +379,7 @@ Evaluates each supplier across revenue contribution, fill rate, and margin perfo
 
 <!-- SCREENSHOT PLACEHOLDER -->
 > 📸 **Excel — Vendor Scorecard**
-> ![Vendor Scorecard Excel](8.Images/Excel_Report/Vendor_Scorecard.png)
+> ![Vendor Scorecard Excel](8.Images/Excel_Report/3.Vendor_Scorecard.png)
 
 ### Sheet 3 — Promotional Effectiveness
 
@@ -388,6 +388,9 @@ Tracks each promotion against a pre-promotion baseline across revenue and margin
 - ✅ **Worth It** → Lift > 10% with strong promo margin
 - ⚠️ **Margin Risk** → Margin improves but sales lift is insufficient
 - ❌ **Underperforming** → Flagged for review or discontinuation
+
+> 📸 **Excel — Promo Intelligence**
+> ![Promo Intelligence Excel](8.Images/Excel_Report/4.Promo_Tracker.png)
 
 ### Sheet 4 — Freight & Channel Analysis
 
