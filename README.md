@@ -486,7 +486,7 @@ RETURN DIVIDE(promo_rev - baseline_rev, baseline_rev, 0)
 
 **Online channel growing fast:** Online revenue share grew from 18% → 27% over the analysis period. BOPIS (Buy Online, Pick Up In Store) emerged as the highest-margin channel despite low volume share.
 
-**Vendor concentration risk:** The top 3 vendors account for 54% of total COGS. The cost simulation confirms that a 5% price increase from any one of them would erode annual margin by approximately ₹12L.
+**Vendor concentration risk:** The top 3 vendors account for 54% of total COGS. The cost simulation confirms that a 5% price increase from any one of them would erode annual margin by approximately $120K
 
 **Promotional drag in specific categories:** Negative promotional lift appeared across Home Decor, Home Textiles, Kitchen & Dining, Outdoor, and Tools & Utility — pointing to discount inefficiency or demand pull-forward rather than true incremental sales.
 
@@ -498,14 +498,14 @@ RETURN DIVIDE(promo_rev - baseline_rev, baseline_rev, 0)
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/YOUR_USERNAME/retail-merchandising-analytics.git
+git clone https://github.com/Yusufmd24/retail-merchandising-analytics.git
 cd retail-merchandising-analytics
 ```
 
 ### 2. Set up the Python environment
 ```bash
 pip install pandas numpy matplotlib seaborn sqlalchemy pyodbc jupyter
-jupyter notebook notebooks/01_EDA_and_Cleaning.ipynb
+jupyter notebook notebooks/Notebook.ipynb
 ```
 
 ### 3. Load the SQL Server schema (run in order)
@@ -519,7 +519,7 @@ jupyter notebook notebooks/01_EDA_and_Cleaning.ipynb
 ```
 
 ### 4. Open Power BI
-Open `Power BI/Merchandising_Intelligence_Report.pbix` and update the SQL Server connection string to point to your local instance.
+Open `Power BI/Retail _Merchandising_Dashboard.pbix` and update the SQL Server connection string to point to your local instance.
 
 ---
 
