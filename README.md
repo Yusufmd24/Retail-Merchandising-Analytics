@@ -155,7 +155,7 @@ df     = df[df['revenue'].between(Q1 - 1.5 * IQR, Q3 + 1.5 * IQR)]
 
 ## 🗄️ Phase 2 — SQL Server: Schema & Analytical Queries
 
-All cleaned data was loaded into Microsoft SQL Server. Six production-quality analytical queries were written to answer the core business questions — each using appropriate SQL features for the task.
+All cleaned data was loaded into Microsoft SQL Server. Six production-quality analytical queries were written (only 5 shown here) to answer the core business questions — each using appropriate SQL features for the task.
 
 ### Schema — `fact_sales` DDL
 
