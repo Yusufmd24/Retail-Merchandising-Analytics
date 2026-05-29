@@ -214,7 +214,7 @@ ORDER BY d.year_num, d.week_num, total_revenue DESC;
 ```
 </details>
 
-![Weekly Sales & Margin](SQL/SQL_Query_Screenshots/Merchandising_Queries/1.Weekly_Sales_and_Margin_by_Category.png)
+![Weekly Sales & Margin](8.Images/SQL_Query_Results/Merchandising_Queries/1.Weekly_Sales_and_Margin_by_Category.png)
 
 ---
 
@@ -240,7 +240,7 @@ ORDER BY total_margin DESC;
 ```
 </details>
 
-![Vendor Scorecard](SQL/SQL_Query_Screenshots/Merchandising_Queries/2.Vendor_Scorecard.png)
+![Vendor Scorecard](8.Images/SQL_Query_Results/Merchandising_Queries/2.Vendor_Scorecard.png)
 
 ---
 
@@ -280,47 +280,11 @@ ORDER BY lift_pct DESC;
 ```
 </details>
 
-![Promotional Lift](SQL/SQL_Query_Screenshots/Merchandising_Queries/3.Promotional_Lift_Analysis.png)
+![Promotional Lift](8.Images/SQL_Query_Results/Merchandising_Queries/3.Promotional_Lift_Analysis.png)
 
 ---
 
-### Query 4 — Top & Bottom SKUs by Margin
-
-Surfaces the 10 highest and 10 lowest margin SKUs using `RANK()` with a `UNION ALL` pattern — enabling quick identification of which products to prioritize and which to review for repricing or discontinuation.
-
-<details>
-<summary>View SQL</summary>
-
-```sql
-WITH sku_margin AS (
-    SELECT
-        p.sku_code,
-        p.product_name,
-        p.category,
-        SUM(f.gross_margin)                                                 AS total_margin,
-        SUM(f.revenue)                                                      AS total_revenue,
-        ROUND(SUM(f.gross_margin) / NULLIF(SUM(f.revenue), 0) * 100, 2)    AS margin_pct
-    FROM fact_sales f
-    JOIN dim_product p ON f.product_key = p.product_key
-    GROUP BY p.sku_code, p.product_name, p.category
-)
-SELECT *, 'Top 10' AS segment
-FROM (
-    SELECT *, RANK() OVER (ORDER BY total_margin DESC) AS rnk FROM sku_margin
-) t WHERE rnk <= 10
-UNION ALL
-SELECT *, 'Bottom 10' AS segment
-FROM (
-    SELECT *, RANK() OVER (ORDER BY total_margin ASC) AS rnk FROM sku_margin
-) b WHERE rnk <= 10;
-```
-</details>
-
-![Top & Bottom SKUs](SQL/SQL_Query_Screenshots/Merchandising_Queries/6.Top_10_Products.png)
-
----
-
-### Query 5 — Omni-Channel Revenue Split
+### Query 4 — Omni-Channel Revenue Split
 
 Calculates each channel's share of monthly revenue using `SUM() OVER()` as a window function — no subqueries needed. Identifies In-Store vs Online vs BOPIS trends over time.
 
@@ -345,11 +309,11 @@ ORDER BY d.year_num, d.month_num, channel_revenue DESC;
 ```
 </details>
 
-![Omni-Channel Split](SQL/SQL_Query_Screenshots/Merchandising_Queries/4.Omni_Channel_Split.png)
+![Omni-Channel Split](8.Images/SQL_Query_Results/Merchandising_Queries/4.Omni_Channel_Split.png)
 
 ---
 
-### Query 6 — Cost Change Simulation (What-If)
+### Query 5 — Cost Change Simulation (What-If)
 
 A parameterized simulation query: change `@cost_increase_pct` and instantly see simulated margin, simulated COGS, and margin erosion per vendor and category. Designed to answer procurement "what if a vendor raises prices?" questions directly in SQL.
 
@@ -382,7 +346,7 @@ ORDER BY margin_erosion DESC;
 ```
 </details>
 
-![Cost Simulation](SQL/SQL_Query_Screenshots/Merchandising_Queries/5.Cost_Inflation_Simulation.png)
+![Cost Simulation](8.Images/SQL_Query_Results/Merchandising_Queries/5.Cost_Inflation_Simulation.png)
 
 ---
 
