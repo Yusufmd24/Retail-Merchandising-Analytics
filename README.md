@@ -224,16 +224,17 @@ Ranks vendors by total margin contribution and calculates average margin %. Conc
 
 ```sql
 SELECT
-    v.vendor_name,
-    COUNT(DISTINCT f.sale_id)                                               AS total_transactions,
-    SUM(f.revenue)                                                          AS total_revenue,
-    SUM(f.gross_margin)                                                     AS total_margin,
-    ROUND(AVG(f.gross_margin / NULLIF(f.revenue, 0)) * 100, 2)             AS avg_margin_pct,
-    RANK() OVER (ORDER BY SUM(f.gross_margin) DESC)                         AS margin_rank
+    v.vendor_name AS vendor,
+    AVG(v.fill_rate) AS fill_rate_pct,
+    SUM(f.sales) AS revenue,
+    SUM(f.profit) AS profit,
+    100.0 * SUM(f.profit) / NULLIF(SUM(f.sales), 0) AS margin_pct,
+    DENSE_RANK() OVER (ORDER BY SUM(f.sales) DESC) AS vendor_rank
 FROM fact_sales f
-JOIN dim_vendor v ON f.vendor_key = v.vendor_key
+JOIN dim_vendor v
+    ON f.vendor_key = v.vendor_key
 GROUP BY v.vendor_name
-ORDER BY total_margin DESC;
+ORDER BY vendor_rank;
 ```
 </details>
 
@@ -249,31 +250,36 @@ Uses a CTE and conditional aggregation to compare average unit revenue during pr
 <summary>View SQL</summary>
 
 ```sql
-WITH promo_sales AS (
+WITH x AS (
     SELECT
-        p.category,
-        pr.promo_name,
-        pr.is_promoted,
-        AVG(f.revenue / NULLIF(f.units_sold, 0))         AS avg_unit_revenue,
-        AVG(f.gross_margin / NULLIF(f.revenue, 0)) * 100 AS avg_margin_pct
+        c.category_name AS category,
+        f.promo_flag,
+        SUM(f.sales) * 1.0 /
+        COUNT(DISTINCT CONCAT(d.year, '-', d.week)) AS avg_weekly_sales
     FROM fact_sales f
-    JOIN dim_product   p  ON f.product_key = p.product_key
-    JOIN dim_promotion pr ON f.promo_key   = pr.promo_key
-    GROUP BY p.category, pr.promo_name, pr.is_promoted
+    JOIN dim_product p ON f.product_key = p.product_key
+    JOIN dim_category c ON p.category_key = c.category_key
+    JOIN dim_date d ON f.date_key = d.date_key
+    GROUP BY c.category_name, f.promo_flag
 )
+
 SELECT
     category,
-    promo_name,
-    MAX(CASE WHEN is_promoted = 1 THEN avg_unit_revenue END) AS promo_avg_rev,
-    MAX(CASE WHEN is_promoted = 0 THEN avg_unit_revenue END) AS baseline_avg_rev,
-    ROUND(
-        (MAX(CASE WHEN is_promoted = 1 THEN avg_unit_revenue END) -
-         MAX(CASE WHEN is_promoted = 0 THEN avg_unit_revenue END)) /
-        NULLIF(MAX(CASE WHEN is_promoted = 0 THEN avg_unit_revenue END), 0) * 100
-    , 2)                                                     AS lift_pct
-FROM promo_sales
-GROUP BY category, promo_name
-ORDER BY lift_pct DESC;
+    MAX(CASE WHEN promo_flag = 'Promo' THEN avg_weekly_sales END) AS promo_sales,
+    MAX(CASE WHEN promo_flag = 'Regular' THEN avg_weekly_sales END) AS regular_sales,
+    100.0 *
+    (
+        MAX(CASE WHEN promo_flag = 'Promo' THEN avg_weekly_sales END) -
+        MAX(CASE WHEN promo_flag = 'Regular' THEN avg_weekly_sales END)
+    )
+    /
+    NULLIF(
+        MAX(CASE WHEN promo_flag = 'Regular' THEN avg_weekly_sales END),
+        0
+    ) AS promo_lift_pct
+FROM x
+GROUP BY category
+ORDER BY promo_lift_pct DESC;
 ```
 </details>
 
@@ -290,19 +296,20 @@ Calculates each channel's share of monthly revenue using `SUM() OVER()` as a win
 
 ```sql
 SELECT
-    d.year_num,
-    d.month_num,
-    s.channel_type,
-    SUM(f.revenue)                                      AS channel_revenue,
-    ROUND(
-        SUM(f.revenue) / SUM(SUM(f.revenue)) OVER
-            (PARTITION BY d.year_num, d.month_num) * 100
-    , 2)                                                AS channel_revenue_share_pct
+    c.category_name AS category,
+    ch.channel_name AS channel,
+    SUM(f.sales) AS revenue,
+    SUM(f.cost) AS cost,
+    SUM(f.profit) AS profit,
+    100.0 * SUM(f.profit) / NULLIF(SUM(f.sales), 0) AS margin_pct
 FROM fact_sales f
-JOIN dim_date  d ON f.date_key  = d.date_key
-JOIN dim_store s ON f.store_key = s.store_key
-GROUP BY d.year_num, d.month_num, s.channel_type
-ORDER BY d.year_num, d.month_num, channel_revenue DESC;
+JOIN dim_product p ON f.product_key = p.product_key
+JOIN dim_category c ON p.category_key = c.category_key
+JOIN dim_channel ch ON f.channel_key = ch.channel_key
+GROUP BY
+    c.category_name,
+    ch.channel_name
+ORDER BY category, revenue DESC;
 ```
 </details>
 
@@ -318,28 +325,26 @@ A parameterized simulation query: change `@cost_increase_pct` and instantly see 
 <summary>View SQL</summary>
 
 ```sql
-DECLARE @cost_increase_pct DECIMAL(5,2) = 5.00;   -- adjust this parameter
+WITH base AS (
+    SELECT
+        c.category_name AS category,
+        SUM(f.sales) AS revenue,
+        SUM(f.cost) AS cost
+    FROM fact_sales f
+    JOIN dim_product p ON f.product_key = p.product_key
+    JOIN dim_category c ON p.category_key = c.category_key
+    GROUP BY c.category_name
+)
 
 SELECT
-    v.vendor_name,
-    p.category,
-    SUM(f.revenue)                                                              AS current_revenue,
-    SUM(f.cogs)                                                                 AS current_cogs,
-    SUM(f.gross_margin)                                                         AS current_margin,
-    SUM(f.cogs) * (1 + @cost_increase_pct / 100)                               AS simulated_cogs,
-    SUM(f.revenue) - SUM(f.cogs) * (1 + @cost_increase_pct / 100)             AS simulated_margin,
-    ROUND(
-        (SUM(f.revenue) - SUM(f.cogs) * (1 + @cost_increase_pct / 100)) /
-        NULLIF(SUM(f.revenue), 0) * 100
-    , 2)                                                                        AS simulated_margin_pct,
-    ROUND(
-        SUM(f.gross_margin) - (SUM(f.revenue) - SUM(f.cogs) * (1 + @cost_increase_pct / 100))
-    , 2)                                                                        AS margin_erosion
-FROM fact_sales f
-JOIN dim_vendor  v ON f.vendor_key  = v.vendor_key
-JOIN dim_product p ON f.product_key = p.product_key
-GROUP BY v.vendor_name, p.category
-ORDER BY margin_erosion DESC;
+    category,
+    revenue,
+    cost,
+    100.0 * (revenue - cost * 1.05) / NULLIF(revenue, 0) AS margin_5pct,
+    100.0 * (revenue - cost * 1.08) / NULLIF(revenue, 0) AS margin_8pct,
+    100.0 * (revenue - cost * 1.10) / NULLIF(revenue, 0) AS margin_10pct
+FROM base
+ORDER BY revenue DESC;
 ```
 </details>
 
