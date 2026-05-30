@@ -471,23 +471,61 @@ VAR baseline_rev = CALCULATE([Avg Unit Revenue],
 RETURN DIVIDE(promo_rev - baseline_rev, baseline_rev, 0)
 ```
 
-> 📄 Full DAX library with business context → [`docs/dax_measures.md`](docs/dax_measures.md)
+> 📄 Full DAX library with business context → [`7. documentation/dax_measures.md`](docs/dax_measures.md)
 
 ---
 
+
 ## 🔑 Key Findings
 
-**Margin concentration:** The top 3 categories contributed ~62% of total gross margin while representing only 38% of SKU count — a classic long-tail margin skew. SKU rationalization is a clear lever.
+🟢 **Margin Concentration Opportunity**  
+The **top 3 categories generated ~62% of total gross margin** while representing only **38% of SKU count** — highlighting a classic **long-tail margin skew**.  
+**Implication:** SKU rationalization and assortment optimization present a strong margin lever.
 
-**Promotional performance was mixed:** 7 of 9 promotions showed positive lift, but 2 promotions in the Flooring category produced negative lift, indicating discount depth was too aggressive and demand was cannibalized rather than grown.
+---
 
-**Online channel growing fast:** Online revenue share grew from 18% → 27% over the analysis period. BOPIS (Buy Online, Pick Up In Store) emerged as the highest-margin channel despite low volume share.
+🟡 **Mixed Promotional Performance**  
+**7 of 9 promotions delivered positive lift**, but **2 Flooring promotions generated negative lift**, suggesting **discount depth was too aggressive** and demand was **cannibalized rather than expanded**.  
+**Implication:** Promotion strategy requires tighter discount calibration.
 
-**Vendor concentration risk:** The top 3 vendors account for 54% of total COGS. The cost simulation confirms that a 5% price increase from any one of them would erode annual margin by approximately $120K
+---
 
-**Promotional drag in specific categories:** Negative promotional lift appeared across Home Decor, Home Textiles, Kitchen & Dining, Outdoor, and Tools & Utility — pointing to discount inefficiency or demand pull-forward rather than true incremental sales.
+🟢 **Online Channel Momentum**  
+Online revenue share increased from **18% → 27%** during the analysis period.  
+**BOPIS (Buy Online, Pick Up In Store)** emerged as the **highest-margin channel**, despite relatively lower volume share.  
+**Implication:** Digital channel economics are strengthening.
 
-**Channel economics favor 2P:** Across all evaluated categories, the 2P (Online) fulfillment model produced lower freight cost per unit and stronger net margin than 3P (In-Store), with Seasonal & Gifts showing the widest margin advantage online.
+---
+
+🔴 **Vendor Concentration Risk**  
+The **top 3 vendors account for 54% of total COGS**.  
+Cost simulations show that a **5% supplier price increase** from any major vendor could reduce **annual margin by ~$120K**.  
+**Implication:** Vendor diversification and sourcing resilience remain critical.
+
+---
+
+🔴 **Promotional Drag in Select Categories**  
+Negative promotional lift appeared across:
+
+- Home Decor  
+- Home Textiles  
+- Kitchen & Dining  
+- Outdoor  
+- Tools & Utility  
+
+This points toward **discount inefficiency**, **demand pull-forward**, or weak promotional targeting rather than genuine incremental demand.
+
+---
+
+🟢 **Channel Economics Favor 2P (Online)**  
+Across evaluated categories, the **2P (Online) fulfillment model** produced:
+
+✔ Lower freight cost per unit  
+✔ Stronger net margins  
+✔ Better operating economics than 3P (In-Store)
+
+**Seasonal & Gifts** showed the **widest online margin advantage**.  
+**Implication:** Online fulfillment demonstrates stronger structural profitability.
 
 ---
 
