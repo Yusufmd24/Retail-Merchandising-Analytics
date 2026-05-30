@@ -195,27 +195,19 @@ Tracks revenue, margin, and week-over-week growth per category using `LAG()` win
 
 ```sql
 SELECT
-    d.year_num,
-    d.week_num,
-    p.category,
-    SUM(f.revenue)                                                          AS total_revenue,
-    SUM(f.gross_margin)                                                     AS total_margin,
-    ROUND(SUM(f.gross_margin) / NULLIF(SUM(f.revenue), 0) * 100, 2)        AS margin_pct,
-    LAG(SUM(f.revenue)) OVER (
-        PARTITION BY p.category ORDER BY d.year_num, d.week_num
-    )                                                                       AS prev_week_revenue,
-    ROUND(
-        (SUM(f.revenue) - LAG(SUM(f.revenue)) OVER (
-            PARTITION BY p.category ORDER BY d.year_num, d.week_num
-        )) / NULLIF(LAG(SUM(f.revenue)) OVER (
-            PARTITION BY p.category ORDER BY d.year_num, d.week_num
-        ), 0) * 100, 2
-    )                                                                       AS wow_growth_pct
+    d.year,
+    d.week,
+    c.category_name AS category,
+    SUM(f.sales) AS revenue,
+    SUM(f.cost) AS cost,
+    SUM(f.profit) AS profit,
+    100.0 * SUM(f.profit) / NULLIF(SUM(f.sales), 0) AS margin_pct
 FROM fact_sales f
-JOIN dim_date    d ON f.date_key    = d.date_key
-JOIN dim_product p ON f.product_key = p.product_key
-GROUP BY d.year_num, d.week_num, p.category
-ORDER BY d.year_num, d.week_num, total_revenue DESC;
+JOIN dim_product p  ON f.product_key = p.product_key
+JOIN dim_category c ON p.category_key = c.category_key
+JOIN dim_date d     ON f.date_key = d.date_key
+GROUP BY d.year, d.week, c.category_name
+ORDER BY d.year, d.week, revenue DESC;
 ```
 </details>
 
