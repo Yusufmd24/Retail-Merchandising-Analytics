@@ -47,6 +47,7 @@ Retail-Merchandising-Analytics/
 ├── 7. Documentation/
 │      └── BUSINESS_INSIGHTS.md                  # Business Decisions Taken from the Report
 |      └── DATA_DICTIONARY.md                    # Data dictionary of all the columns used
+|      └── DAX_MEASURES.md                       # A Summary of all the DAX used.
 │
 └── README.md
 ```
