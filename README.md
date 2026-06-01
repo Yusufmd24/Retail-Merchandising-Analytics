@@ -480,18 +480,21 @@ RETURN DIVIDE(promo_rev - baseline_rev, baseline_rev, 0)
 ## 🔑 Key Findings
 
 🟢 **Margin Concentration Opportunity**  
+
 The **top 3 categories generated ~62% of total gross margin** while representing only **38% of SKU count** — highlighting a classic **long-tail margin skew**.  
 **Implication:** SKU rationalization and assortment optimization present a strong margin lever.
 
 ---
 
 🟡 **Mixed Promotional Performance**  
+
 **7 of 9 promotions delivered positive lift**, but **2 Flooring promotions generated negative lift**, suggesting **discount depth was too aggressive** and demand was **cannibalized rather than expanded**.  
 **Implication:** Promotion strategy requires tighter discount calibration.
 
 ---
 
 🟢 **Online Channel Momentum**  
+
 Online revenue share increased from **18% → 27%** during the analysis period.  
 **BOPIS (Buy Online, Pick Up In Store)** emerged as the **highest-margin channel**, despite relatively lower volume share.  
 **Implication:** Digital channel economics are strengthening.
@@ -499,6 +502,7 @@ Online revenue share increased from **18% → 27%** during the analysis period.
 ---
 
 🔴 **Vendor Concentration Risk**  
+
 The **top 3 vendors account for 54% of total COGS**.  
 Cost simulations show that a **5% supplier price increase** from any major vendor could reduce **annual margin by ~$120K**.  
 **Implication:** Vendor diversification and sourcing resilience remain critical.
@@ -507,6 +511,7 @@ Cost simulations show that a **5% supplier price increase** from any major vendo
 
 🔴 **Promotional Drag in Select Categories**  
 Negative promotional lift appeared across:
+
 
 - Home Decor  
 - Home Textiles  
@@ -519,6 +524,7 @@ This points toward **discount inefficiency**, **demand pull-forward**, or weak p
 ---
 
 🟢 **Channel Economics Favor 2P (Online)**  
+
 Across evaluated categories, the **2P (Online) fulfillment model** produced:
 
 ✔ Lower freight cost per unit  
@@ -568,7 +574,7 @@ Open `Power BI/Retail _Merchandising_Dashboard.pbix` and update the SQL Server c
 | Data Modeling | Kimball Star Schema — 1 Fact Table, 5 Dimension Tables |
 | Analytical Queries | T-SQL — Window Functions, CTEs, Parameterized Simulation |
 | Reporting | Excel — Pivot MIS, Scorecards, Conditional Logic |
-| Visualisation | Power BI Desktop — DAX, DirectQuery, Drill-Through |
+| Visualisation | Power BI Desktop — DAX, PowerQuery, illustration |
 
 ---
 
